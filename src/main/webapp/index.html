@@ -7,10 +7,36 @@
 	
 	<link rel="stylesheet" href="html/css/home.css" type="text/css" />
 	<script type="text/javascript" src='html/lib/jquery-1.8.2.min.js'></script>
+	<script type="text/javascript">
+	var nMaxWidth = 180;
+	var nMaxHeight = 180;
+	var name=navigator.appName; 
+    if(name=="Microsoft Internet Explorer"){
+    	$(window).load(function() {
+    		$("#mytable a").each(function(){
+    			var objImg = this.getElementsByTagName("img");
+    			var nImgNewRate = 0;
+    			var nImgOldRate = nMaxWidth / nMaxHeight;
+    			for (i = 0; i < objImg.length; i++) {
+    				nImgNewRate = objImg[i].offsetWidth / objImg[i].offsetHeight;
+    				if (nImgNewRate >= nImgOldRate) {
+    					objImg[i].style.height = nMaxWidth / nImgNewRate + "px";
+    					objImg[i].style.width = nMaxWidth + "px";
+    					objImg[i].style.marginTop = Math.round((nMaxHeight - nMaxWidth / nImgNewRate) / 2) + "px";
+    				} else {
+    					objImg[i].style.width = nMaxHeight * nImgNewRate + "px";
+    					objImg[i].style.height = nMaxHeight + "px";
+    					objImg[i].style.marginLeft = (nMaxWidth - nMaxHeight*nImgNewRate)/ 2 + "px";
+    				}
+    			}
+    		});        
+        });
+    } 
+</script>
 </head>
 <body style="background-color: RGB(255,255,255); margin: 0 auto;">
 	<div style="margin: 0 auto; width: 950px;">
-		<table width="950px" align="center">
+		<table width="950px" align="center" id="mytable">
 			<tbody width="950px">
 				<tr height="190px" width="950px">
 					<td>
