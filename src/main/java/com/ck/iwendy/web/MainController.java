@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = "main.pi")
+    @RequestMapping(value = "main.ck")
     public ModelAndView main(HttpSession session, HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         

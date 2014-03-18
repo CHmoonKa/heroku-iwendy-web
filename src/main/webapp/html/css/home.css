@@ -1,0 +1,10 @@
+td {
+	height:190px;
+	width:190px;
+	text-align:center;
+}
+
+td a img{
+	max-width:180px;
+	max-height:180px;
+}
