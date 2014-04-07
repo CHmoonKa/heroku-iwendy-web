@@ -2,3 +2,5 @@ target
 .classpath
 .project
 .settings
+iwendy-web.iml
+.idea/
