@@ -1,0 +1,25 @@
+.wendy-site-target {
+    height: 141px;      /* equals max image height */
+    text-align: center;
+    margin: 1em 0;
+    list-style:none;
+    behavior: expression(
+        function(t){
+            t.insertAdjacentHTML('afterBegin','<span class="wendy-site-target_before"></span>');
+            t.runtimeStyle.behavior = 'none';
+        }(this)
+    );
+}
+
+.wendy-site-target:before,
+.wendy-site-target_before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.wendy-site-target img {
+    vertical-align: middle;
+    max-height: 141px;
+}
